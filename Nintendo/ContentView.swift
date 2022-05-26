@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack{
-            Color.blue
+            Color("Background")
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 30){
@@ -42,6 +42,21 @@ struct ContentView: View {
                         .mask(
                     Text("GAME BOY")
                         .font(.system(size: 35,weight: .bold)))
+                    VStack {
+                        HStack(spacing: 0){
+                        Image(systemName: "circle.fill")
+                                .foregroundColor(.red)
+                            Image(systemName: "chevron.right")
+                            Image(systemName: "chevron.right")
+                            Image(systemName: "chevron.right")
+                            
+                        }.foregroundColor(.white).font(.caption)
+                        Text("Power")
+                            .font(.callout)
+                           
+                        
+                    }.foregroundColor(.white)
+                        .offset(x: -140)
                     
                         
                             
