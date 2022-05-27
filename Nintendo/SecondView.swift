@@ -1,19 +1,14 @@
 //
-//  ContentView.swift
+//  SecondView.swift
 //  Nintendo
 //
-//  Created by Tristan Aly on 24/05/2022.
+//  Created by Tristan Aly on 27/05/2022.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    init() {
-        UINavigationBar.setAnimationsEnabled(false)
-    }
+struct SecondView: View {
     var body: some View {
-        NavigationView{
         ZStack{
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
@@ -39,16 +34,9 @@ struct ContentView: View {
                         Text("COLOR")
                             .font(.system(size: 23,weight: .bold)))
                     }.offset(y: 150)
-                    
-                    Text("GAME BOY")
-                        .font(.system(size: 35,weight: .bold))
-                        .overlay(
-                            LinearGradient(colors: [Color.red, Color.yellow,Color.yellow,Color.green], startPoint: .leading, endPoint: .trailing))
-                        .mask(
-                           
-                    Text("GAME BOY")
-                        .font(.system(size: 35,weight: .bold))
-                            )
+                    Image("zelda")
+                        .resizable()
+                        .frame(width: 220, height: 220)
                     
                     VStack {
                         HStack(spacing: 0){
@@ -84,12 +72,12 @@ struct ContentView: View {
                 
             }.padding(.top,50)
         }.edgesIgnoringSafeArea(.all)
-        }.navigationBarHidden(true)
+            .navigationBarHidden(true)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SecondView()
     }
 }

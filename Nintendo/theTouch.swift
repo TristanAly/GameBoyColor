@@ -8,26 +8,45 @@
 import SwiftUI
 
 struct theTouch: View {
+    
+    @State var screen = false
+    
+    
     var body: some View {
+       
         HStack( spacing: 15){
             Image(systemName: "dpad.fill")
                 .resizable()
                 .frame(width: 130, height: 130)
             Spacer()
             Image(systemName: "b.circle.fill")
-                .resizable()
-                .frame(width: 45, height: 45)
+                .TouchStyle()
                 .offset( y: 15)
+            NavigationLink{
+                SecondView()
+            } label: {
             Image(systemName: "a.circle.fill")
-                .resizable()
-                .frame(width: 45, height: 45)
+                .TouchStyle()
                 .offset( y: -20)
+                .foregroundColor(.black)
+            }
+            
         }.padding(.horizontal)
+        
     }
 }
 
 struct theTouch_Previews: PreviewProvider {
     static var previews: some View {
         theTouch()
+        
+    }
+}
+
+extension Image {
+    func TouchStyle() -> some View {
+        self
+            .resizable()
+            .frame(width: 45, height: 45)
     }
 }
