@@ -14,7 +14,8 @@ struct SecondView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 30){
-                
+                Spacer()
+                Spacer()
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: 350, height: 350)
@@ -67,7 +68,9 @@ struct SecondView: View {
                 }.foregroundColor(.black.opacity(0.4))
                 theTouch()
                 StarAndSelect()
-                Radio()
+                HStack{
+                    Radio()}
+                .offset( x: 20,y: -45)
                 Spacer()
                 
             }.padding(.top,50)

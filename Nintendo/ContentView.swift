@@ -64,10 +64,7 @@ struct ContentView: View {
                            
                         
                     }.foregroundColor(.white)
-                        .offset(x: -140)
-                    
-                        
-                            
+                        .offset(x: -140)        
                 }
                 HStack{
                     Capsule()
@@ -79,7 +76,10 @@ struct ContentView: View {
                 }.foregroundColor(.black.opacity(0.4))
                 theTouch()
                 StarAndSelect()
-                Radio()
+                HStack{
+                    Radio()}
+                .offset( x: 20,y: -45)
+                
                 Spacer()
                 
             }.padding(.top,50)
